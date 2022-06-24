@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Best2Watch - Add Movie</title>
+    <link rel='stylesheet' href='https://netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css'>
+    <script src='https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js'></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.1/jquery.validate.min.js'></script>
+    <script src='js/movie_add.js'></script>
+    <script src='js/movie_show.js'></script>
+    <link rel="shortcut icon" href="#" />
+    <link rel="icon" href="assets/favicon.ico">
+    <link rel='stylesheet' type='text/css' href='css/style.css'>
+</head>
+
+<body>
+
+    <!-- Header -->
+    <header>
+        <h2><a href='/list'><img src='assets/logo.png' alt='' /></a></h2>
+    </header>
+    <br />
+    <main>
+        <div class='col-sm-5 col-sm-offset-4'>
+            <h1>Add new media</h1>
+            <form id='add_movie' name='add_movie' method='POST'>
+                <!-- ID -->
+                <div id='name-group' class='form-group'>
+                    <label for='id'>ID</label>
+                    <input type='text' class='form-control' name='id_field' id='id' required />
+                </div>
+
+                <!-- NAME -->
+                <div id='name-group' class='form-group'>
+                    <label for='username'>Name</label>
+                    <input type='text' class='form-control' name='name' id='username' required />
+                </div>
+
+                <!-- PHOTO -->
+                <div id='name-group' class='form-group'>
+                    <label for='url'>Cover Photo URL</label>
+                    <input type='url' class='form-control' id='picture' required />
+                </div>
+
+                <!-- DIRECTOR -->
+                <div id='name-group' class='form-group'>
+                    <label for='director'>Director Name</label>
+                    <input type='text' class='form-control' name='director' id='director' required />
+                </div>
+
+                <!-- RELEASE DATE -->
+                <div id='name-group' class='form-group'>
+                    <label for='release'>Release Date</label>
+                    <input type='date' class='form-control' name='date' id='date' required />
+                </div>
+
+                <!-- RATING -->
+                <div id='name-group' class='form-group'>
+                    <label for='rating'>Rating</label>
+                    <input type='number' min='0' max='5' class='form-control' name='rating' id='rating' required />
+                </div>
+
+                <!-- MOVIE/SERIES -->
+                <div id='name-group' class='form-group'>
+                    <label for='mediaType'>Media Type&emsp;</label>
+                    <select id='mediaType' onchange=addSeries() required>
+                        <option value='movie'>Movie</option>
+                        <option value='series'>Series</option>
+                    </select>
+                </div>
+
+                <!-- SERIES-SEASONS/EPISODES -->
+                <div id='isSeries' class='form-group mediaType' style='display: none'>
+                    <label for='isSeries'>No. of seasons</label>
+                    <input id="seasons" type="number" min="1" max="20" onchange=addEpisodes() required />
+                    <label id='episodes_label'></label><br />
+                    <div id="episodes"></div>
+                </div>
+
+                <button type='submit'>Submit</button>
+            </form>
+        </div>
+
+        <!-- Popup -->
+        <div id="myPopup" class="popup">
+            <div class="popup-content">
+                <span class="close">&times;</span>
+                <h2 id="title"></h2>
+                <form id="popupForm" onsubmit="">
+                    <p id="description"></p>
+                    <p id="btns">
+                </form>
+            </div>
+        </div>
+
+    </main>
+</body>
+
+</html>

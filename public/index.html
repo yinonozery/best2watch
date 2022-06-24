@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Best2Watch</title>
+  <script src='https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js'></script>
+  <script src='js/movie_show.js'></script>
+  <link rel="shortcut icon" href="#" />
+  <link rel="icon" href="assets/favicon.ico">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel='stylesheet' type='text/css' href='css/style.css'>
+</head>
+
+<body>
+
+  <!-- Header -->
+  <header>
+    <h2><a href='/list'><img src='assets/logo.png' alt='' /></a></h2>
+  </header>
+
+  <main>
+    <p class='sort'>
+      <button class="newmovie" onclick='window.location.href="/add"'>Add Movie</button>
+      <button class="newmovie" onclick="addActor()">Add Actor</button>
+    </p>
+    <!-- Sort option for data -->
+    <p class='sort'>
+      <span>Sort by&nbsp;</span>
+      <select id='sort' onchange='sortBy(movies)'>
+        <option value='name-'>Name</option>
+        <option value='date-' selected='selected'>Release Date</option>
+        <option value='rating-'>Rating</option>
+      </select>
+      &nbsp;|&nbsp;
+      <span>Order by&nbsp;</span>
+      <select id='order' onchange='sortBy(movies)'>
+        <option value='asc'>Ascending</option>
+        <option value='desc' selected='selected'>Descending</option>
+      </select>
+    </p>
+
+    <!-- Show movies & series -->
+    <div class='movies'></div>
+
+    <!-- Popup -->
+    <div id="myPopup" class="popup">
+      <div class="popup-content">
+        <span class="close">&times;</span>
+        <h2 id="title"></h2>
+        <form id="popupForm" onsubmit="">
+          <p id="description"></p>
+          <p id="btns">
+        </form>
+      </div>
+    </div>
+
+    <p class='sort'>
+      <button class="newmovie" onclick='window.location.href="/add"'>Add Movie</button>
+      <button class="newmovie" onclick="addActor()">Add Actor</button>
+    </p>
+    <footer>
+      Ex5 - Yinon Ozery
+    </footer>
+  </main>
+</body>
+
+</html>

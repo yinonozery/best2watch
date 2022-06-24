@@ -40,7 +40,7 @@ $(document).ready(function () {
     else
       arrEpisodes = null;
 
-    if (seasons < 1) {
+    if (isSeries && seasons < 1) {
       dialogBox("ERROR", "Media type is series, please enter the number of seasons (>0)", false);
       return;
     }

@@ -29,6 +29,8 @@ $(document).ready(function () {
     const type = document.getElementById('mediaType').value;
     let arrEpisodes = [];
     let seasonsValid = true;
+    isSeries = false;
+
     if (type === 'series')
       isSeries = true;
     if (isSeries) {

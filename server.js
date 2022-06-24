@@ -4,7 +4,7 @@ const express = require('express'),
     path = require('path');
 require('./server/db/mongoose');
 
-const port = process.env.PORT || 3001
+const port = process.env.PORT;
 const app = express();
 
 app.use(cors({

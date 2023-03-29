@@ -2,7 +2,7 @@
 
 # Best2Watch
 A simple website with a client side and a server side, showing movies and actors.
-### [Preview](https://b2watch.herokuapp.com/)
+### [Preview](https://best2watch.vercel.app/)
 
 # Common setup
 Clone the repo and install the dependencies.

@@ -3,28 +3,14 @@
   "version": 2,
   "builds": [
     {
-      "src": "./server.js",
+      "src": "*.js",
       "use": "@vercel/node"
     }
   ],
   "routes": [
     {
-      // Specify which paths will route to a destination using a regex
-      "src": "/*",
-      // Specify the paths' destination
-      "dest": "public/index.html"
-    },
-    {
-      // Specify which paths will route to a destination using a regex
-      "src": "/add",
-      // Specify the paths' destination
-      "dest": "public/add_movie_form.html"
-    },
-    {
-      // Specify which paths will route to a destination using a regex
-      "src": "/edit",
-      // Specify the paths' destination
-      "dest": "public/edit_movie_form.html"
-    },
+      "src": "/(.*)",
+      "dest": "/"
+    }
   ]
 }
